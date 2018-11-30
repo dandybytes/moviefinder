@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Poster from "./components/Poster";
+import SearchBar from "./components/SearchBar";
+import MovieBoard from "./components/MovieBoard";
 import "./App.css";
 
 class App extends Component {
@@ -7,7 +11,12 @@ class App extends Component {
     return (
       <div className="app">
         <Header />
-        <p>It's alive!</p>
+        <main>
+          <Poster />
+          <SearchBar />
+          <MovieBoard />
+        </main>
+        <Footer />
       </div>
     );
   }

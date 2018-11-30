@@ -1,0 +1,35 @@
+.searchbar-wrapper {
+  /* height: 4rem; */
+  padding: 1.5rem;
+  background-color: var(--color-1);
+}
+
+.searchbar {
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  border-radius: 2rem;
+  padding: 0 1rem;
+  background-color: var(--color-1b);
+  opacity: 0.75;
+}
+
+.searchbar-icon {
+  margin-right: 1rem;
+  color: white;
+  color: var(--color-2);
+  font-size: 1.8rem;
+}
+
+.searchbar-input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.searchbar-input:focus {
+  outline: none;
+}

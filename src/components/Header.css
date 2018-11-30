@@ -1,8 +1,8 @@
 header {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
-  padding: 1rem 0;
+  padding: 0.75rem 0;
   background-color: var(--color-1);
   color: white;
 }
@@ -19,6 +19,7 @@ header {
 
 .navbar-list-item-link {
   /* padding: 0.5rem 1rem; */
+  font-size: 1.1rem;
   text-decoration: none;
   text-transform: uppercase;
   color: white;

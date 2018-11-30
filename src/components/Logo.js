@@ -4,7 +4,7 @@ import "./Logo.css";
 const Logo = () => {
   return (
     <div className="logo">
-      <h1>LOGO</h1>
+      <h1 className="logo-title">MovieFinder</h1>
     </div>
   );
 };

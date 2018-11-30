@@ -17,7 +17,6 @@ class Poster extends Component {
   }
 
   render() {
-    console.log("poster rendered");
     console.log("poster state: ");
     console.log(this.state);
 

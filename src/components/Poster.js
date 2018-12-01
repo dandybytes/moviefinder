@@ -12,11 +12,10 @@ class Poster extends Component {
   };
 
   componentDidUpdate() {
-    if (this.props.movies.movies && this.state.isLoading) {
-      const randIndex = Math.floor(
-        Math.random() * this.props.movies.movies.length
-      );
-      const movie = this.props.movies.movies[randIndex];
+    const movies = this.props.movies;
+    if (movies && this.state.isLoading) {
+      const randIndex = Math.floor(Math.random() * movies.length);
+      const movie = movies[randIndex];
       const backdrop = movie.backdrop_path;
       const image = `${url_img_backdrop}${backdrop}`;
       const title = movie.title;
@@ -46,7 +45,7 @@ class Poster extends Component {
   }
 }
 
-const mapStateToProps = state => state;
+const mapStateToProps = state => ({ movies: state.movies.movies });
 
 export default connect(
   mapStateToProps,

@@ -1,0 +1,15 @@
+.movie-board {
+  padding: 1rem;
+}
+
+.movie-board-headline {
+  margin-bottom: 1rem;
+}
+
+.movie-board-content {
+  max-width: 100%;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: auto auto auto auto auto;
+}

@@ -1,9 +1,10 @@
 .poster {
+  box-sizing: border-box;
   position: relative;
 }
 
 .poster-image {
-  height: 40rem;
+  height: 624px;
   background-size: cover;
   background-position: center center;
   background-image: linear-gradient(var(--color-1), transparent 20%);

@@ -1,34 +1,25 @@
 import React, { Component } from "react";
-import { url_complete_popular, url_img_backdrop } from "../tools/url";
+import {connect} from "react-redux";
+import { url_img_backdrop } from "../tools/url";
 import "./Poster.css";
 
 class Poster extends Component {
-  state = {};
+  state = {
 
-  componentDidMount() {
-    fetch(url_complete_popular)
-      .then(response => response.json())
-      .then(result => {
-        const randIndex = Math.floor(Math.random() * 20);
-        console.log(url_complete_popular);
-        console.log(result.results[randIndex]);
-        this.setState(result.results[randIndex]);
-      });
   }
-
   render() {
-    console.log("poster state: ");
-    console.log(this.state);
-
-    const style = {
-      backgroundImage: `url("${url_img_backdrop}${this.state.backdrop_path}")`
-    };
+    console.log("poster props");
+    console.log(this.props);
+    let backdrop;
+    if (this.props.movies.movies) {
+      backdrop = this.props.movies.movies[2].backdrop_path;
+    }
 
     return (
       <section className="poster">
         <div
           className="poster-image"
-          style={this.state.backdrop_path && style}
+          style={backdrop && {backgroundImage: `url("${url_img_backdrop}${backdrop}")`}}
         />
         <div className="poster-text">
           <h1 className="poster-title">{"Movie Title"}</h1>
@@ -43,4 +34,6 @@ class Poster extends Component {
   }
 }
 
-export default Poster;
+const mapStateToProps = state => (state);
+
+export default connect(mapStateToProps, null)(Poster);

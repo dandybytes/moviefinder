@@ -9,28 +9,23 @@ class SearchBar extends Component {
   timeout;
 
   handleSearchInput = event => {
-    this.setState({ query: event.target.value.trim() });
+    const query = event.target.value.trim();
+    query && this.setState({ query });
     clearTimeout(this.timeout);
-    this.timeout = setTimeout(() => {
-      console.log("timeout activated");
-      const query = this.state.query;
-      if (query) {
-        this.props.setCategory("query");
-        this.props.setQuery(this.state.query);
-      } else {
-        this.props.setCategory("popular");
-      }
-    }, 500);
+    this.timeout = setTimeout(() => this.props.setQuery(this.state.query), 700);
+  };
+
+  handleSubmit = event => {
+    event.preventDefault();
+    this.props.setQuery(this.state.query);
   };
 
   render() {
     console.log("search bar state: ");
     console.log(this.state);
-    // console.log("search bar props: ");
-    // console.log(this.props);
     return (
-      <section className="searchbar-wrapper">
-        <div className="searchbar">
+      <form className="searchbar-form" onSubmit={this.handleSubmit}>
+        <label className="searchbar">
           <i className="fas fa-search searchbar-icon" />
           <input
             type="text"
@@ -38,8 +33,8 @@ class SearchBar extends Component {
             value={this.state.query}
             onChange={this.handleSearchInput}
           />
-        </div>
-      </section>
+        </label>
+      </form>
     );
   }
 }

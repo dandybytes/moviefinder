@@ -4,9 +4,7 @@ import { Provider } from "react-redux";
 import reducers from "./reducers/reducer-root";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Poster from "./components/Poster";
-import SearchBar from "./components/SearchBar";
-import MovieBoard from "./components/MovieBoard";
+import Home from "./components/Home";
 import "./App.css";
 
 const store = createStore(
@@ -22,9 +20,7 @@ class App extends Component {
           <React.Fragment>
             <Header />
             <main>
-              <Poster />
-              <SearchBar />
-              <MovieBoard />
+              <Home />
             </main>
             <Footer />
           </React.Fragment>

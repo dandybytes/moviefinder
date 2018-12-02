@@ -10,7 +10,9 @@ import "./Home.css";
 
 class Home extends Component {
   compilePoster = () => {
-    const movies = this.props.movies;
+    const movies = this.props.movies.filter(
+      movie => movie.backdrop_path && movie.title && movie.overview
+    );
     if (movies.length > 0) {
       const randIndex = Math.floor(Math.random() * movies.length);
       const movie = movies[randIndex];
@@ -22,20 +24,30 @@ class Home extends Component {
     }
   };
 
+  fetchMovies = () => {
+    if (this.props.query) {
+      fetchMoviesByKeyword(this.props.query)
+        .then(result => this.props.setMovies(result))
+        .then(() => this.props.setPoster(this.compilePoster()));
+    } else {
+      fetchPopularMovies()
+        .then(result => this.props.setMovies(result))
+        .then(() => this.props.setPoster(this.compilePoster()));
+    }
+  };
+
   componentDidMount() {
     if (this.props.movies.length === 0) {
-      switch (this.props.category) {
-        case "query":
-          fetchMoviesByKeyword(this.props.query).then(result =>
-            this.props.setMovies(result)
-          );
-          break;
-        default:
-          fetchPopularMovies()
-            .then(result => this.props.setMovies(result))
-            .then(() => this.props.setPoster(this.compilePoster()));
-          return;
-      }
+      this.fetchMovies();
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    if (
+      prevProps.category !== this.props.category ||
+      prevProps.query !== this.props.query
+    ) {
+      this.fetchMovies();
     }
   }
 

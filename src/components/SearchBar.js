@@ -1,26 +1,33 @@
 import React, { Component } from "react";
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 import "./SearchBar.css";
-import { fetchPopularMovies, fetchMoviesByKeyword } from "./../tools/fetch";
-import {setMovies, setFavorites} from "../actions/actions-movie-list";
+import { setCategory, setQuery } from "../actions/actions-movie-list";
 
 class SearchBar extends Component {
   state = { query: "" };
 
-  componentDidMount() {
-    const {query} = this.state.query;
-    (query ? fetchMoviesByKeyword(query) : fetchPopularMovies())
-    .then(result => this.props.setMovies(result));
-    // if (this.state.query) {
-    //   fetchMoviesByKeyword(this.state.query).then(result => {console.log(result); setMovies(result);});
-    // } else {
-    //   fetchPopularMovies().then(result => {console.log("setting popular movies from search bar"); this.props.setMovies(result);});
-    // }
-  }
+  timeout;
+
+  handleSearchInput = event => {
+    this.setState({ query: event.target.value.trim() });
+    clearTimeout(this.timeout);
+    this.timeout = setTimeout(() => {
+      console.log("timeout activated");
+      const query = this.state.query;
+      if (query) {
+        this.props.setCategory("query");
+        this.props.setQuery(this.state.query);
+      } else {
+        this.props.setCategory("popular");
+      }
+    }, 500);
+  };
 
   render() {
-    // console.log("search bar state: ");
-    // console.log(this.state);
+    console.log("search bar state: ");
+    console.log(this.state);
+    // console.log("search bar props: ");
+    // console.log(this.props);
     return (
       <section className="searchbar-wrapper">
         <div className="searchbar">
@@ -29,7 +36,7 @@ class SearchBar extends Component {
             type="text"
             className="searchbar-input"
             value={this.state.query}
-            onChange={e => this.setState({ query: e.target.value })}
+            onChange={this.handleSearchInput}
           />
         </div>
       </section>
@@ -37,6 +44,7 @@ class SearchBar extends Component {
   }
 }
 
-// const mapDispatchToProps = dispatch => ({setMovies});
-
-export default connect(null, {setMovies, setFavorites})(SearchBar);
+export default connect(
+  null,
+  { setCategory, setQuery }
+)(SearchBar);

@@ -1,6 +1,7 @@
 .poster {
   box-sizing: border-box;
   position: relative;
+  height: 624px;
 }
 
 .poster-image {
@@ -8,6 +9,13 @@
   background-size: cover;
   background-position: center center;
   background-image: linear-gradient(var(--color-1), transparent 20%);
+}
+
+.poster-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .poster-text {

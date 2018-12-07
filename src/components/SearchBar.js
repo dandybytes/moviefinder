@@ -10,7 +10,7 @@ class SearchBar extends Component {
 
   handleSearchInput = event => {
     const query = event.target.value.trim();
-    query && this.setState({ query });
+    this.setState({ query });
     clearTimeout(this.timeout);
     this.timeout = setTimeout(() => this.props.setQuery(this.state.query), 700);
   };

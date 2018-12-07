@@ -11,7 +11,9 @@ const MovieBoard = props => (
       <Spinner />
     ) : (
       <React.Fragment>
-        <h1 className="movie-board-headline">Movies:</h1>
+        <h1 className="movie-board-headline">
+          {props.query ? "movie search results:" : `${props.category} movies:`}
+        </h1>
         <div className="movie-board-content">
           {props.movies &&
             props.movies.map(movie => (

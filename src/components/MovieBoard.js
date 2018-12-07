@@ -17,7 +17,10 @@ const MovieBoard = props => (
             props.movies.map(movie => (
               <MovieCard
                 key={movie.id}
-                img={url_img_poster + movie.poster_path}
+                img={
+                  movie.poster_path ? url_img_poster + movie.poster_path : null
+                }
+                title={movie.title}
               />
             ))}
         </div>

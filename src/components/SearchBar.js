@@ -21,8 +21,8 @@ class SearchBar extends Component {
   };
 
   render() {
-    console.log("search bar state: ");
-    console.log(this.state);
+    // console.log("search bar state: ");
+    // console.log(this.state);
     return (
       <form className="searchbar-form" onSubmit={this.handleSubmit}>
         <label className="searchbar">

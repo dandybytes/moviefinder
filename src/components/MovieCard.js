@@ -6,7 +6,13 @@ const MovieCard = props => {
   // console.log(props);
   return (
     <div className="movie-card">
-      <img className="movie-card-img" src={props.img} alt="movie thumbnail" />
+      {props.img ? (
+        <img className="movie-card-img" src={props.img} alt="movie thumbnail" />
+      ) : (
+        <div className="movie-card-placeholder">
+          <p>{props.title}</p>
+        </div>
+      )}
     </div>
   );
 };

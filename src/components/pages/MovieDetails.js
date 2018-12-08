@@ -18,13 +18,13 @@ class MovieDetails extends Component {
     console.log(this.props);
     return (
       <div className="movie-details">
-        <p>movie details component</p>
+        {this.props.status_code && <h1>movie cannot be found</h1>}
       </div>
     );
   }
 }
 
 export default connect(
-  state => ({ ...state.movie }),
+  state => state,
   { setMovieDetails }
 )(MovieDetails);

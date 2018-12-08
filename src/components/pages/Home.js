@@ -10,7 +10,7 @@ import "./Home.css";
 
 class Home extends Component {
   compilePoster = () => {
-    const movies = this.props.movies.filter(
+    const movies = this.props.movies.movies.filter(
       movie => movie.backdrop_path && movie.title && movie.overview
     );
     if (movies.length > 0) {
@@ -25,8 +25,8 @@ class Home extends Component {
   };
 
   fetchMovies = () => {
-    if (this.props.query) {
-      fetchMoviesByKeyword(this.props.query)
+    if (this.props.movies.query) {
+      fetchMoviesByKeyword(this.props.movies.query)
         .then(result => this.props.setMovies(result))
         .then(() => this.props.setPoster(this.compilePoster()));
     } else {
@@ -37,23 +37,23 @@ class Home extends Component {
   };
 
   componentDidMount() {
-    if (this.props.movies.length === 0) {
+    if (this.props.movies.movies.length === 0) {
       this.fetchMovies();
     }
   }
 
   componentDidUpdate(prevProps) {
     if (
-      prevProps.category !== this.props.category ||
-      prevProps.query !== this.props.query
+      prevProps.movies.category !== this.props.movies.category ||
+      prevProps.movies.query !== this.props.movies.query
     ) {
       this.fetchMovies();
     }
   }
 
   render() {
-    // console.log("home props: ");
-    // console.log(this.props);
+    console.log("home props: ");
+    console.log(this.props);
     return (
       <React.Fragment>
         <Poster />
@@ -65,6 +65,6 @@ class Home extends Component {
 }
 
 export default connect(
-  state => ({ ...state.movies }),
+  state => state,
   { setMovies, setPoster }
 )(Home);

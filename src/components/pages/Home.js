@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { url_img_backdrop } from "../tools/url";
-import { fetchPopularMovies, fetchMoviesByKeyword } from "./../tools/fetch";
-import { setMovies, setPoster } from "../actions/actions-movie-list";
-import Poster from "./Poster";
-import SearchBar from "./SearchBar";
-import MovieBoard from "./MovieBoard";
+import { url_img_backdrop } from "../../tools/url";
+import { fetchPopularMovies, fetchMoviesByKeyword } from "../../tools/fetch";
+import { setMovies, setPoster } from "../../actions/actions-movie-list";
+import Poster from "../Poster";
+import SearchBar from "../SearchBar";
+import MovieBoard from "../MovieBoard";
 import "./Home.css";
 
 class Home extends Component {

@@ -1,10 +1,15 @@
 import React, { Component } from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
 import reducers from "./reducers/reducer-root";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Home from "./components/Home";
+import Home from "./components/pages/Home";
+import MovieDetails from "./components/pages/MovieDetails";
+import Favorites from "./components/pages/Favorites";
+import About from "./components/pages/About";
+import NotFound from "./components/pages/NotFound";
 import "./App.css";
 
 const store = createStore(
@@ -15,17 +20,23 @@ const store = createStore(
 class App extends Component {
   render() {
     return (
-      <div className="app">
-        <Provider store={store}>
-          <React.Fragment>
+      <Provider store={store}>
+        <BrowserRouter>
+          <div className="app">
             <Header />
             <main>
-              <Home />
+              <Switch>
+                <Route path="/" exact component={Home} />
+                <Route path="/movie/:movieId" exact component={MovieDetails} />
+                <Route path="/favorites" exact component={Favorites} />
+                <Route path="/about" exact component={About} />
+                <Route component={NotFound} />
+              </Switch>
             </main>
             <Footer />
-          </React.Fragment>
-        </Provider>
-      </div>
+          </div>
+        </BrowserRouter>
+      </Provider>
     );
   }
 }

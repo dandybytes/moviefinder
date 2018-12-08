@@ -1,4 +1,11 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 main {
+  flex-grow: 1;
   box-sizing: border-box;
   max-width: 100%;
 }

@@ -10,17 +10,30 @@ const Header = () => {
       <nav className="navbar">
         <ul className="navbar-list">
           <li className="navbar-list-item">
-            <NavLink to="/" className="navbar-list-item-link">
+            <NavLink
+              to="/"
+              exact
+              className="navbar-list-item-link"
+              activeClassName="navbar-list-item-link-active"
+            >
               Home
             </NavLink>
           </li>
           <li className="navbar-list-item">
-            <NavLink to="/favorites" className="navbar-list-item-link">
+            <NavLink
+              to="/favorites"
+              className="navbar-list-item-link"
+              activeClassName="navbar-list-item-link-active"
+            >
               Favorites
             </NavLink>
           </li>
           <li className="navbar-list-item">
-            <NavLink to="/about" className="navbar-list-item-link">
+            <NavLink
+              to="/about"
+              className="navbar-list-item-link"
+              activeClassName="navbar-list-item-link-active"
+            >
               About
             </NavLink>
           </li>

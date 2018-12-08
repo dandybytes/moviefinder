@@ -1,11 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./MovieCard.css";
 
 const MovieCard = props => {
   // console.log("movie card props: ");
   // console.log(props);
   return (
-    <div className="movie-card">
+    <Link to={`/movie/${props.id}`} className="movie-card">
       {props.img ? (
         <img className="movie-card-img" src={props.img} alt="movie thumbnail" />
       ) : (
@@ -13,7 +14,7 @@ const MovieCard = props => {
           <p>{props.title}</p>
         </div>
       )}
-    </div>
+    </Link>
   );
 };
 

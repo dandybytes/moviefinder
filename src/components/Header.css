@@ -34,3 +34,7 @@ header {
   /* background-color: white;
   color: var(--color-1); */
 }
+
+.navbar-list-item-link-active {
+  color: var(--color-2);
+}

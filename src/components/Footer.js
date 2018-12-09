@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="footer-credits">
         <img
           className="moviedb-logo"
-          src="./moviedb-logo.png"
+          src="/moviedb-logo.png"
           alt="powered by the MovieDB API"
         />
       </div>

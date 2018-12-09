@@ -6,7 +6,7 @@ class About extends Component {
   render() {
     return (
       <div className="about">
-        <p>about component</p>
+        <h1>about page pending</h1>
       </div>
     );
   }

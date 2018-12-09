@@ -2,6 +2,16 @@
   box-sizing: border-box;
   position: relative;
   height: 624px;
+  animation: PosterAnimation 1s;
+}
+
+@keyframes PosterAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .poster-image {

@@ -52,8 +52,8 @@ class Home extends Component {
   }
 
   render() {
-    console.log("home props: ");
-    console.log(this.props);
+    // console.log("home props: ");
+    // console.log(this.props);
     return (
       <React.Fragment>
         <Poster />

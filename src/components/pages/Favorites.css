@@ -1,0 +1,7 @@
+.favorites {
+  min-height: 40rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

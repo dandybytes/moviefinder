@@ -2,7 +2,9 @@ import React from "react";
 import "./MovieStatStripe.css";
 
 const MovieStatStripe = ({ movie }) => {
-  const runtime = `${Math.floor(movie.runtime / 60)}h ${movie.runtime % 60}min`;
+  const runtime = movie.runtime
+    ? `${Math.floor(movie.runtime / 60)}h ${movie.runtime % 60}min`
+    : "unknown";
 
   // budget (number -> comma-separated string preceded by $ sign)
   let budget = [];
@@ -30,12 +32,6 @@ const MovieStatStripe = ({ movie }) => {
         <span>budget: </span>
         <span>{budget}</span>
       </li>
-
-      {/* <li className="movie-details-stat-stripe-item">
-        <i className="far fa-money-bill-alt" />
-        <span>runtime: </span>
-        <span>2h 33min</span>
-      </li> */}
     </ul>
   );
 };

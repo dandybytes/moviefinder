@@ -17,8 +17,8 @@ class MovieDetailsPage extends Component {
   }
 
   render() {
-    console.log("movie details props");
-    console.log(this.props);
+    // console.log("movie details props");
+    // console.log(this.props);
     return (
       <div className="movie-details-page">
         {this.props.status_code && <h1>movie cannot be found</h1>}

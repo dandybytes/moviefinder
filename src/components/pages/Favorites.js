@@ -6,7 +6,10 @@ class Favorites extends Component {
   render() {
     return (
       <div className="favorites">
-        <p>favorites component</p>
+        <h1>favorites page pending</h1>
+        <p>
+          consider converting "favorites" page to "watch list" & "watched" page
+        </p>
       </div>
     );
   }

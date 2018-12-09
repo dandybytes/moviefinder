@@ -3,8 +3,8 @@ import { url_img_backdrop, url_img_poster } from "../tools/url";
 import "./MovieDetailsCore.css";
 
 const MovieDetailsCore = ({ movie }) => {
-  console.log("movie details core props: ");
-  console.log(movie);
+  // console.log("movie details core props: ");
+  // console.log(movie);
 
   let tagline = movie.tagline.toLowerCase();
   // get rid of the trailing period

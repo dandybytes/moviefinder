@@ -12,8 +12,6 @@ const MovieDetailsCore = ({ movie }) => {
     tagline[tagline.length - 1] === "."
       ? tagline.slice(0, tagline.length - 1)
       : tagline;
-  // replace any periods in the string with semicolons
-  tagline = tagline.split(".").join(";");
 
   return (
     <div

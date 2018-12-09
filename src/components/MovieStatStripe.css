@@ -1,0 +1,18 @@
+.movie-details-stat-stripe {
+  display: flex;
+  list-style-type: none;
+  background-color: var(--color-1b);
+  color: white;
+}
+
+.movie-details-stat-stripe-item {
+  display: inline-block;
+  flex: 1 1 5rem;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+.movie-details-stat-stripe-item span {
+  margin-left: 0.5rem;
+}

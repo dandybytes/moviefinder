@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { fetchMovieDetails } from "../../tools/fetch";
 import { setMovieDetails } from "../../actions/actions-movie-details";
 import MovieDetailsCore from "./../MovieDetailsCore";
+import MovieStatStripe from "./../MovieStatStripe";
 import Spinner from "./../Spinner";
 import "./MovieDetailsPage.css";
 
@@ -22,7 +23,10 @@ class MovieDetailsPage extends Component {
       <div className="movie-details-page">
         {this.props.status_code && <h1>movie cannot be found</h1>}
         {this.props.movie.id ? (
-          <MovieDetailsCore movie={this.props.movie} />
+          <React.Fragment>
+            <MovieDetailsCore movie={this.props.movie} />
+            <MovieStatStripe movie={this.props.movie} />
+          </React.Fragment>
         ) : (
           <Spinner />
         )}

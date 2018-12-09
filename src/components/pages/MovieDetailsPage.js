@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchMovieDetails } from "./../../tools/fetch";
-import { setMovieDetails } from "./../../actions/actions-movie-details";
-import "./MovieDetails.css";
+import { fetchMovieDetails } from "../../tools/fetch";
+import { setMovieDetails } from "../../actions/actions-movie-details";
+import MovieDetailsCore from "./../MovieDetailsCore";
+import Spinner from "./../Spinner";
+import "./MovieDetailsPage.css";
 
-class MovieDetails extends Component {
+class MovieDetailsPage extends Component {
   state = {};
 
   componentDidMount() {
@@ -17,8 +19,13 @@ class MovieDetails extends Component {
     console.log("movie details props");
     console.log(this.props);
     return (
-      <div className="movie-details">
+      <div className="movie-details-page">
         {this.props.status_code && <h1>movie cannot be found</h1>}
+        {this.props.movie.id ? (
+          <MovieDetailsCore movie={this.props.movie} />
+        ) : (
+          <Spinner />
+        )}
       </div>
     );
   }
@@ -27,4 +34,4 @@ class MovieDetails extends Component {
 export default connect(
   state => state,
   { setMovieDetails }
-)(MovieDetails);
+)(MovieDetailsPage);

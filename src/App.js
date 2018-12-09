@@ -6,7 +6,7 @@ import reducers from "./reducers/reducer-root";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./components/pages/Home";
-import MovieDetails from "./components/pages/MovieDetails";
+import MovieDetailsPage from "./components/pages/MovieDetailsPage";
 import Favorites from "./components/pages/Favorites";
 import About from "./components/pages/About";
 import NotFound from "./components/pages/NotFound";
@@ -27,7 +27,11 @@ class App extends Component {
             <main>
               <Switch>
                 <Route path="/" exact component={Home} />
-                <Route path="/movie/:movieId" exact component={MovieDetails} />
+                <Route
+                  path="/movie/:movieId"
+                  exact
+                  component={MovieDetailsPage}
+                />
                 <Route path="/favorites" exact component={Favorites} />
                 <Route path="/about" exact component={About} />
                 <Route component={NotFound} />

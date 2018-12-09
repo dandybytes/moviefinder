@@ -26,14 +26,18 @@ const MovieDetailsCore = ({ movie }) => {
     >
       <div className="movie-details-content">
         <div className="movie-details-poster">
-          <img
-            src={`${url_img_poster}${movie.poster_path}`}
-            alt="movie poster"
-          />
+          {movie.poster_path && (
+            <img
+              src={`${url_img_poster}${movie.poster_path}`}
+              alt="movie poster"
+            />
+          )}
         </div>
         <div className="movie-details-text">
           <h1 className="movie-details-title">{movie.title}</h1>
-          <h3 className="movie-details-tagline">{`- ${tagline} -`}</h3>
+          <h3 className="movie-details-tagline">
+            — <span>{tagline ? tagline : "—"}</span> —
+          </h3>
           <p className="movie-details-genre">
             {movie.genres.map(obj => obj.name).join(", ")}
           </p>

@@ -6,7 +6,7 @@ class NotFound extends Component {
   render() {
     return (
       <div className="not-found">
-        <p>not found component</p>
+        <h1>Ooops... This page doesn't exist.</h1>
       </div>
     );
   }

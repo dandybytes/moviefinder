@@ -1,7 +1,7 @@
 export const movie = (state = {}, action) => {
   switch (action.type) {
     case "set_movie_details":
-      return { ...state, ...action.data };
+      return { ...action.data };
     default:
       return state;
   }

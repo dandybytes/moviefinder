@@ -1,10 +1,21 @@
 .movie-card {
   max-width: 100%;
   max-height: 100%;
+  box-sizing: border-box;
+  margin: 0.5rem;
+  transition: transform 0.3s ease-out;
+}
+
+.movie-card:hover {
+  transform: scale(1.08);
+}
+
+.movie-card:active {
+  transform: scale(0.95);
 }
 
 .movie-card-img {
-  max-width: 100%;
+  width: 100%;
 }
 
 .movie-card-placeholder {

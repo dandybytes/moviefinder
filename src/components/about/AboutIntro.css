@@ -1,0 +1,20 @@
+.about-app-source-code-link {
+    display: block;
+    margin: 1rem;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    background-color: var(--color-2);
+    color: var(--color-4);
+}
+
+.about-app-source-code-link:hover {
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    background-color: var(--color-4);
+    color: var(--color-2);
+}
+
+.about-app-intro p a {
+    color: #01d277;
+    text-decoration: none;
+}

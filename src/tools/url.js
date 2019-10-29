@@ -31,10 +31,10 @@ const url_img_backdrop = url_img_base + url_img_backdrop_size;
 const url_img_poster = url_img_base + url_img_poster_size;
 
 export {
-  url_popular,
-  url_query,
-  url_details_start,
-  url_details_end,
-  url_img_backdrop,
-  url_img_poster
+    url_popular,
+    url_query,
+    url_details_start,
+    url_details_end,
+    url_img_backdrop,
+    url_img_poster
 };

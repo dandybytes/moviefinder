@@ -6,7 +6,7 @@ import "./Logo.css";
 const Logo = () => {
     return (
         <div className="logo">
-            <Link className="logo-link" to="/">
+            <Link className="logo-link" to="/movies">
                 <FilmStrip />
             </Link>
         </div>

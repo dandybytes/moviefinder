@@ -17,7 +17,7 @@ const Menu = () => {
                 <ul className="menu-ul">
                     <li className="menu-li">
                         <NavLink
-                            to="/"
+                            to="/movies"
                             exact
                             className="menu-link"
                             activeClassName="menu-link-active"

@@ -2,8 +2,13 @@ import React from "react";
 import {connect} from "react-redux";
 import "./Poster.css";
 import Spinner from "./common/Spinner";
+import {url_img_backdrop} from "../tools/url";
 
-const Poster = ({image, title, description}) => {
+const Poster = movie => {
+    const image = `${url_img_backdrop}${movie.backdrop_path}`;
+    const title = movie.title;
+    const description = movie.overview;
+
     return (
         <section className="poster">
             {!image ? (
@@ -16,7 +21,7 @@ const Poster = ({image, title, description}) => {
                     <div
                         className="poster-image"
                         style={{
-                            backgroundImage: `linear-gradient(var(--color-1), transparent 20%), url("${image}")`
+                            backgroundImage: `linear-gradient(var(--color-1) 0%, transparent 40%, transparent 60%, var(--color-1) 100%), url("${image}")`
                         }}
                     />
                     <div className="poster-text">
@@ -29,9 +34,9 @@ const Poster = ({image, title, description}) => {
     );
 };
 
-const mapStateToProps = state => ({...state.movies.poster});
+const mapStateToProps = state => {
+    const {posterOptions, currentPosterIndex} = state.poster;
+    return posterOptions[currentPosterIndex];
+};
 
-export default connect(
-    mapStateToProps,
-    null
-)(Poster);
+export default connect(mapStateToProps, null)(Poster); //prettier-ignore

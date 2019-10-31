@@ -3,6 +3,7 @@ import TabBoard from "../common/TabBoard";
 import AboutFeatures from "./../about/AboutFeatures";
 import AboutIntro from "./../about/AboutIntro";
 import AboutTech from "./../about/AboutTech";
+import Button from "../common/Button";
 import "./AboutPage.css";
 
 const AboutPage = () => {
@@ -15,6 +16,10 @@ const AboutPage = () => {
     return (
         <div className="about-container">
             <TabBoard tabs={tabs} />
+
+            <Button href={"/contacts"} className="button-animated-borders">
+                Let me try it!
+            </Button>
         </div>
     );
 };

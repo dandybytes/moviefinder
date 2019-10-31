@@ -4,6 +4,9 @@ import "./AboutIntro.css";
 const AboutIntro = () => {
     return (
         <div className="about-app-intro">
+            <h3 className="about-app-intro-warning">
+                NOTE: app not yet fully adapted for mobile devices!
+            </h3>
             {/* <p>movie search and bookmarking app</p> */}
             <p>movie search app</p>
             <p>created with React.js</p>

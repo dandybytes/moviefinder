@@ -1,20 +1,32 @@
 .about-app-source-code-link {
-    display: block;
+    display: inline-block;
     margin: 1rem;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 2rem;
     text-decoration: none;
-    background-color: var(--color-2);
-    color: var(--color-4);
+    background-color: var(--color-1c);
+    color: var(--color-1);
 }
 
 .about-app-source-code-link:hover {
-    padding: 0.5rem 1rem;
     text-decoration: none;
-    background-color: var(--color-4);
-    color: var(--color-2);
+    background-color: var(--color-1c);
+    color: #ececec;
 }
 
-.about-app-intro p a {
-    color: #01d277;
+.about-app-intro p a:link,
+.about-app-intro p a:active,
+.about-app-intro p a:visited,
+.about-app-intro p a:focus {
+    /* color: #01d277; */
+    color: var(--color-1a);
     text-decoration: none;
+}
+
+.about-app-intro p a:hover {
+    color: var(--color-1);
+    text-decoration: underline;
+}
+
+.about-app-intro-warning {
+    color: red;
 }

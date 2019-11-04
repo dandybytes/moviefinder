@@ -17,7 +17,7 @@ const AboutPage = () => {
         <div className="about-container">
             <TabBoard tabs={tabs} />
 
-            <Button href={"/contacts"} className="button-animated-borders">
+            <Button href={"/movies"} className="button-animated-borders">
                 Let me try it!
             </Button>
         </div>

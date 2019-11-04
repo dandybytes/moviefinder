@@ -11,7 +11,7 @@
 @media only screen and (max-width: 750px) {
     .logo {
         position: absolute;
-        top: 5vmin;
+        top: 4vmin;
         z-index: 2;
     }
 }

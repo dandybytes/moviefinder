@@ -10,14 +10,21 @@ const FilmStrip = () => {
                 <div className="filmstrip-content">
                     <div className="filmstrip-frame">
                         <img src={cinemaIcon} alt="cinema logo" />
+                        {/* <img src={require("../../assets/img/cinema.png")} alt="cinema logo" /> */}
                     </div>
+                    <div className="filmstrip-frame blank-frame"></div>
                     <div className="filmstrip-frame">Movie</div>
+                    <div className="filmstrip-frame blank-frame"></div>
                     <div className="filmstrip-frame">Finder</div>
+                    <div className="filmstrip-frame blank-frame"></div>
                     <div className="filmstrip-frame">
                         <img src={cinemaIcon} alt="cinema logo" />
                     </div>
+                    <div className="filmstrip-frame blank-frame"></div>
                     <div className="filmstrip-frame">Movie</div>
+                    <div className="filmstrip-frame blank-frame"></div>
                     <div className="filmstrip-frame">Finder</div>
+                    <div className="filmstrip-frame blank-frame"></div>
                 </div>
                 <div className="filmstrip-perforations" />
             </div>

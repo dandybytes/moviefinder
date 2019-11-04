@@ -1,9 +1,17 @@
 .logo {
     /* height: 5vh;
     width: 15vh; */
-    opacity: 0.7;
+    opacity: 0.5;
 }
 
 .logo-link {
     text-decoration: none;
+}
+
+@media only screen and (max-width: 750px) {
+    .logo {
+        position: absolute;
+        top: 5vmin;
+        z-index: 2;
+    }
 }

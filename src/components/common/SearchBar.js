@@ -1,7 +1,8 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
-import "./SearchBar.css";
 import {setCategory, setQuery} from "../../actions/actions-movie-list";
+import "./SearchBar.css";
+import MagnifyingGlassIcon from "./MagnifyingGlassIcon";
 
 class SearchBar extends Component {
     state = {query: ""};
@@ -21,25 +22,21 @@ class SearchBar extends Component {
     };
 
     render() {
-        // console.log("search bar state: ");
-        // console.log(this.state);
         return (
             <form className="searchbar-form" onSubmit={this.handleSubmit}>
-                <label className="searchbar">
-                    <i className="fas fa-search searchbar-icon" />
+                <label className="searchbar-label">
                     <input
-                        type="text"
+                        type="search"
                         className="searchbar-input"
+                        placeholder="movie title..."
                         value={this.state.query}
                         onChange={this.handleSearchInput}
                     />
+                    <MagnifyingGlassIcon />
                 </label>
             </form>
         );
     }
 }
 
-export default connect(
-    null,
-    {setCategory, setQuery}
-)(SearchBar);
+export default connect(null, {setCategory, setQuery})(SearchBar); //prettier-ignore

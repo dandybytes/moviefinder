@@ -1,23 +1,22 @@
 import React from "react";
-import {connect} from "react-redux";
 import Spinner from "./common/Spinner";
 import MovieCard from "./MovieCard";
 import {url_img_poster} from "../tools/url";
 import "./MovieBoard.css";
 
-const MovieBoard = props => {
+const MovieBoard = ({query, category, movieList}) => {
     return (
         <div className="movie-board">
-            {!props ? (
+            {!movieList ? (
                 <Spinner />
             ) : (
                 <React.Fragment>
                     <h1 className="movie-board-headline">
-                        {props.query ? "movie search results:" : `${props.category} movies:`}
+                        {query ? "movie search results:" : `${category} movies:`}
                     </h1>
                     <div className="movie-board-content">
-                        {props.movieList &&
-                            props.movieList.map(movie => (
+                        {movieList &&
+                            movieList.map(movie => (
                                 <MovieCard
                                     key={movie.id}
                                     id={movie.id}
@@ -36,7 +35,4 @@ const MovieBoard = props => {
     );
 };
 
-export default connect(
-    state => ({...state.movies}),
-    null
-)(MovieBoard);
+export default MovieBoard;

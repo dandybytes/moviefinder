@@ -11,7 +11,9 @@ import "./Home.css";
 const Home = props => {
     // filter out movie objects that miss the image, title or description info
     const validatePosterOptions = movieList =>
-        movieList.filter(movie => movie.backdrop_path && movie.title && movie.overview);
+        movieList
+            ? movieList.filter(movie => movie.backdrop_path && movie.title && movie.overview)
+            : [];
 
     const fetchMovies = () => {
         // fetch movies that match user-input keywords
@@ -46,7 +48,11 @@ const Home = props => {
         <React.Fragment>
             <Poster />
             <SearchBar />
-            <MovieBoard />
+            <MovieBoard
+                category="popular"
+                query={props.movies.query}
+                movieList={props.movies.movieList}
+            />
         </React.Fragment>
     );
 };

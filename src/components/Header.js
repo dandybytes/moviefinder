@@ -24,11 +24,29 @@ const Header = () => {
                         </li>
                         <li className="navbar-list-item">
                             <NavLink
-                                to="/favorites"
+                                to="/popular"
                                 className="navbar-list-item-link"
                                 activeClassName="navbar-list-item-link-active"
                             >
-                                Favorites
+                                Popular
+                            </NavLink>
+                        </li>
+                        <li className="navbar-list-item">
+                            <NavLink
+                                to="/toprated"
+                                className="navbar-list-item-link"
+                                activeClassName="navbar-list-item-link-active"
+                            >
+                                Top
+                            </NavLink>
+                        </li>
+                        <li className="navbar-list-item">
+                            <NavLink
+                                to="/nowplaying"
+                                className="navbar-list-item-link"
+                                activeClassName="navbar-list-item-link-active"
+                            >
+                                Current
                             </NavLink>
                         </li>
                         <li className="navbar-list-item">

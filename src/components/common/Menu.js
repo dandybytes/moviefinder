@@ -27,11 +27,29 @@ const Menu = () => {
                     </li>
                     <li className="menu-li">
                         <NavLink
-                            to="/favorites"
+                            to="/popular"
                             className="menu-link"
                             activeClassName="menu-link-active"
                         >
-                            Favorites
+                            Popular
+                        </NavLink>
+                    </li>
+                    <li className="menu-li">
+                        <NavLink
+                            to="/toprated"
+                            className="menu-link"
+                            activeClassName="menu-link-active"
+                        >
+                            Top Rated
+                        </NavLink>
+                    </li>
+                    <li className="menu-li">
+                        <NavLink
+                            to="/nowplaying"
+                            className="menu-link"
+                            activeClassName="menu-link-active"
+                        >
+                            Now Playing
                         </NavLink>
                     </li>
                     <li className="menu-li">

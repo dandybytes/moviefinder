@@ -3,7 +3,6 @@ import {connect} from "react-redux";
 import {fetchMovieDetails} from "../../tools/fetch";
 import {setMovieDetails} from "../../actions/actions-movie-details";
 import MovieDetailsCore from "../MovieDetailsCore";
-import MovieStatStripe from "../MovieStatStripe";
 import Spinner from "../common/Spinner";
 import "./MovieDetailsPage.css";
 
@@ -18,7 +17,6 @@ const MovieDetailsPage = props => {
             {props.movieDetails.id ? (
                 <React.Fragment>
                     <MovieDetailsCore movie={props.movieDetails} />
-                    <MovieStatStripe movie={props.movieDetails} />
                 </React.Fragment>
             ) : props.movieDetails.status_code ? (
                 <h1 style={{color: "red"}}>movie cannot be found</h1>

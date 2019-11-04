@@ -17,19 +17,9 @@ const Footer = () => {
                     />
                 </a>
             </div>
+            <div className="footer-gap"></div>
             <div className="footer-note">
                 <q>Television is chewing gum for the eyes.</q>
-            </div>
-            <div className="footer-social-media">
-                <a href="/">
-                    <i className="fab fa-twitter-square" />
-                </a>
-                <a href="/">
-                    <i className="fab fa-facebook-square" />
-                </a>
-                <a href="/">
-                    <i className="fab fa-snapchat-square" />
-                </a>
             </div>
         </footer>
     );

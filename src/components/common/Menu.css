@@ -66,7 +66,12 @@
     height: 7.5vmin;
     width: 7.5vmin;
     border-radius: 50%;
-    background-image: radial-gradient(#0e788e, #033750);
+    background-image: radial-gradient(
+        circle at center right,
+        #0e788e 0%,
+        #033750 70%,
+        transparent 100%
+    );
     opacity: 0;
     transition: all 0.8s ease-in-out;
 }

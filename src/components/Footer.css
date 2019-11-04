@@ -1,11 +1,11 @@
 footer {
-    /* width: 100%; */
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     padding: 0.5rem 1rem;
     background-color: var(--color-1);
     color: white;
+    opacity: 0.9;
 }
 
 .footer-social-media {
@@ -14,6 +14,19 @@ footer {
 
 .moviedb-logo {
     height: 2.5rem;
+}
+
+.footer-credits,
+.footer-gap,
+.footer-note {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-note {
+    font-size: 1rem;
+    text-align: center;
 }
 
 .footer-note q {
@@ -31,4 +44,14 @@ footer {
 
 .footer-social-media i {
     margin: 0 0.75rem;
+}
+
+@media only screen and (max-width: 500px) {
+    .footer-note {
+        font-size: 0.75rem;
+    }
+
+    .footer-gap {
+        flex: 0;
+    }
 }

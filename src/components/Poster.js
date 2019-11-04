@@ -2,7 +2,7 @@ import React, {useState, useEffect, useRef} from "react";
 import {connect} from "react-redux";
 import "./Poster.css";
 import Spinner from "./common/Spinner";
-import {url_img_backdrop} from "../tools/url";
+import {url_img_backdrop, url_img_poster} from "../tools/url";
 import {setCurrentPosterIndex} from "../actions/actions-poster";
 
 const Poster = props => {
@@ -19,7 +19,11 @@ const Poster = props => {
         let timeout;
         if (posterOptions.length > 0 && currentPosterIndex !== null) {
             const movie = posterOptions[currentPosterIndex];
-            setImage(`${url_img_backdrop}${movie.backdrop_path}`);
+            if (window.innerWidth > 600) {
+                setImage(`${url_img_backdrop}${movie.backdrop_path}`);
+            } else {
+                setImage(`${url_img_poster}${movie.poster_path}`);
+            }
             setTitle(movie.title);
             setDescription(movie.overview);
             timeout = setTimeout(() => {
@@ -33,7 +37,7 @@ const Poster = props => {
             }, 7000);
         }
         return () => clearTimeout(timeout);
-    }, [currentPosterIndex, posterOptions, fade]);
+    }, [currentPosterIndex, posterOptions, fade, window.innerWidth]);
 
     // whenever 'fade' class removed from poster image, increment poster image index by 1
     useEffect(() => {

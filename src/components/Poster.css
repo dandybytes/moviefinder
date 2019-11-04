@@ -1,7 +1,7 @@
 .poster {
     box-sizing: border-box;
     position: relative;
-    height: 624px;
+    height: 70vh;
     animation: PosterAnimation 1s;
     background: radial-gradient(ellipse at center, var(--color-1b) 0%, var(--color-1) 100%);
 }
@@ -16,7 +16,7 @@
 }
 
 .poster-image {
-    height: 624px;
+    height: 70vh;
     background-size: cover;
     background-position: center center;
     background-image: linear-gradient(
@@ -54,11 +54,19 @@
     bottom: 0;
     left: 0;
     padding: 2.5rem;
-    background-image: linear-gradient(transparent, var(--color-1));
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        var(--color-1d) 5%,
+        var(--color-1b) 25%,
+        var(--color-1a) 50%,
+        transparent 100%
+    );
     color: white;
     font-family: Oswald, sans-serif;
     line-height: 1.5;
     transition: all 1s ease-in-out;
+    opacity: 0.8;
 }
 
 .poster-title {
@@ -73,4 +81,41 @@
     font-size: 1.5rem;
     font-weight: 200;
     opacity: 0.8;
+}
+
+@media only screen and (max-width: 960px) {
+    .poster-title {
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+
+    .poster-description {
+        font-size: 1.25rem;
+        line-height: 2.25rem;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .poster {
+        height: 80vh;
+    }
+
+    .poster-image {
+        height: 80vh;
+    }
+
+    .poster-text {
+        min-width: 100vw;
+        padding: 1rem 2rem;
+    }
+
+    .poster-title {
+        font-size: 1.5rem;
+        line-height: 1.75rem;
+    }
+
+    .poster-description {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
 }

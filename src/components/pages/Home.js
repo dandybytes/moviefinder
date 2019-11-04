@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, {useEffect} from "react";
 import {connect} from "react-redux";
 import {fetchPopularMovies, fetchMoviesByKeyword} from "../../tools/fetch";
 import {setMovies} from "../../actions/actions-movie-list";
@@ -8,49 +8,48 @@ import SearchBar from "../common/SearchBar";
 import MovieBoard from "../MovieBoard";
 import "./Home.css";
 
-class Home extends Component {
-    compilePosterOptions = () =>
-        this.props.movies.movieList.filter(
-            movie => movie.backdrop_path && movie.title && movie.overview
-        );
+const Home = props => {
+    // filter out movie objects that miss the image, title or description info
+    const validatePosterOptions = movieList =>
+        movieList.filter(movie => movie.backdrop_path && movie.title && movie.overview);
 
-    fetchMovies = () => {
-        if (this.props.movies.query) {
-            fetchMoviesByKeyword(this.props.movies.query)
-                .then(result => this.props.setMovies(result))
-                .then(() => this.props.setPosterOptions(this.compilePosterOptions()));
+    const fetchMovies = () => {
+        // fetch movies that match user-input keywords
+        if (props.movies.query) {
+            fetchMoviesByKeyword(props.movies.query)
+                .then(result => props.setMovies(result))
+                .catch(err => console.error(err));
+            // if no user input, default to popular movies
         } else {
             fetchPopularMovies()
-                .then(result => this.props.setMovies(result))
-                .then(() => this.props.setPosterOptions(this.compilePosterOptions()));
+                .then(result => props.setMovies(result))
+                .catch(err => console.error(err));
         }
     };
 
-    componentDidMount() {
-        if (this.props.movies.movieList.length === 0) {
-            this.fetchMovies();
-        }
-    }
+    // if movie list empty when home page mounts, fetch movies
+    useEffect(() => {
+        if (props.movies.movieList.length === 0) fetchMovies();
+    }, []);
 
-    componentDidUpdate(prevProps) {
-        if (
-            prevProps.movies.category !== this.props.movies.category ||
-            prevProps.movies.query !== this.props.movies.query
-        ) {
-            this.fetchMovies();
-        }
-    }
+    // refresh movie list every time the user-input query or category changes
+    useEffect(() => {
+        fetchMovies();
+    }, [props.movies.category, props.movies.query]);
 
-    render() {
-        return (
-            <React.Fragment>
-                <Poster />
-                <SearchBar />
-                <MovieBoard />
-            </React.Fragment>
-        );
-    }
-}
+    // validate every refreshed movie list for poster options
+    useEffect(() => {
+        props.setPosterOptions(validatePosterOptions(props.movies.movieList));
+    }, [props.movies.movieList]);
+
+    return (
+        <React.Fragment>
+            <Poster />
+            <SearchBar />
+            <MovieBoard />
+        </React.Fragment>
+    );
+};
 
 export default connect(
     state => state,

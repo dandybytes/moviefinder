@@ -12,7 +12,17 @@ const MovieBoard = ({query, category, movieList}) => {
             ) : (
                 <React.Fragment>
                     <h1 className="movie-board-headline">
-                        {query ? "movie search results:" : `${category} movies:`}
+                        {query
+                            ? "movie search results:"
+                            : `${
+                                  category === "popular"
+                                      ? "popular movies"
+                                      : category === "now-playing"
+                                      ? "movies in theaters now"
+                                      : category === "top-rated"
+                                      ? "top rated movies"
+                                      : "movies"
+                              }:`}
                     </h1>
                     <div className="movie-board-content">
                         {movieList &&

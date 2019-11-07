@@ -24,6 +24,10 @@ const AboutTech = () => {
                     <th>TheMovieDB API</th>
                     <td>data source</td>
                 </tr>
+                <tr>
+                    <th>Netlify</th>
+                    <td>hosting solution</td>
+                </tr>
             </tbody>
         </table>
     );

@@ -1,9 +1,6 @@
 .filmstrip {
     background-color: var(--color-2);
-    /* height: 100%;
-    width: 100%; */
     height: 5vh;
-    /* width: 15vh; */
     width: 30vh;
     overflow: hidden;
 }
@@ -14,13 +11,13 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 0.2vh 0;
+    padding: 0.25vh 0;
     animation: filmroll 8s linear infinite;
 }
 
 .filmstrip-perforations {
     width: 100%;
-    height: 0.8vh;
+    height: 0.4vh;
     background-image: linear-gradient(to right, var(--color-1) 50%, transparent 0%);
     background-size: 1vh;
     background-repeat: repeat-x;
@@ -28,13 +25,13 @@
 
 .filmstrip-content {
     display: flex;
-    height: 4.5vh;
-    margin: 0.3vh 0;
+    height: 3vh;
+    margin: 0.2vh 0;
 }
 
 .filmstrip-frame {
     width: 6vh;
-    height: 4.5vh;
+    height: 3vh;
     display: flex;
     justify-content: center;
     align-items: center;

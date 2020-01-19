@@ -14,6 +14,7 @@ const PopularPage = props => {
                 .then(result => props.setPopularMovies(result))
                 .catch(err => console.error(err));
         }
+        // eslint-disable-next-line
     }, []);
 
     return (

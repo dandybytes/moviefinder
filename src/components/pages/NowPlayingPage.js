@@ -14,6 +14,7 @@ const NowPlayingPage = props => {
                 .then(result => props.setNowPlayingMovies(result))
                 .catch(err => console.error(err));
         }
+        // eslint-disable-next-line
     }, []);
 
     return (

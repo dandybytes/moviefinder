@@ -9,6 +9,7 @@ import "./MovieDetailsPage.css";
 const MovieDetailsPage = props => {
     useEffect(() => {
         fetchMovieDetails(props.match.params.movieId).then(result => props.setMovieDetails(result));
+        // eslint-disable-next-line
     }, []);
 
     return (

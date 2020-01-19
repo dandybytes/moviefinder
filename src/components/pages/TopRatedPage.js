@@ -14,6 +14,7 @@ const TopRatedPage = props => {
                 .then(result => props.setTopRatedMovies(result))
                 .catch(err => console.error(err));
         }
+        // eslint-disable-next-line
     }, []);
 
     return (

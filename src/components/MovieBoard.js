@@ -1,6 +1,6 @@
 import React from "react";
 import Spinner from "./common/Spinner";
-import MovieCard from "./MovieCard";
+import MovieCardContainer from "./movie-card/MovieCardContainer";
 import {url_img_poster} from "../tools/url";
 import "./MovieBoard.css";
 
@@ -27,7 +27,7 @@ const MovieBoard = ({query, category, movieList}) => {
                     <div className="movie-board-content">
                         {movieList &&
                             movieList.map(movie => (
-                                <MovieCard
+                                <MovieCardContainer
                                     key={movie.id}
                                     id={movie.id}
                                     img={
